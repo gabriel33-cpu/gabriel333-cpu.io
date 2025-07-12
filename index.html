@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Google Search Console verification -->
-  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
-
   <title>RPP Agency - Creación de Contenido</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
   <style>
     :root {
       --color-bg: #faf9f7;            /* Fondo blanco roto */
@@ -312,126 +309,109 @@
     /* Botón WhatsApp fijo en esquina */
     .whatsapp-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 25px;
+      right: 25px;
       background-color: var(--color-secondary);
       color: var(--color-white);
-      padding: 14px 18px;
       border-radius: 50%;
-      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: background-color var(--transition-speed), transform var(--transition-speed);
-      z-index: 10000;
+      width: 65px;
+      height: 65px;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 2.8rem;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
+      z-index: 1100;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .whatsapp-button:hover,
     .whatsapp-button:focus {
-      background-color: #a37506;
+      background-color: var(--color-accent);
       outline: none;
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(163, 117, 6, 0.75);
     }
 
-    /* Responsive */
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       nav .container {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.5rem;
       }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-
       header h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
       }
-
+      .services ul {
+        grid-template-columns: 1fr;
+      }
       section {
         margin: 2rem 1rem;
-        padding: 1.5rem 1rem 2rem;
+        padding: 1.5rem 1.5rem 2.5rem;
+      }
+      .contact-form {
+        margin: 0 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
+
+  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
-      <div class="logo" tabindex="0" aria-label="RPP Agency">RPP Agency</div>
+      <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
-        <li><a href="#servicios" tabindex="0">Servicios</a></li>
-        <li><a href="#contacto" tabindex="0">Contacto</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
   <header>
-    <h1>Conecta con tu audiencia</h1>
-    <p>Ayudo a marcas y emprendedores a crear contenido profesional que impacta.</p>
+    <h1>RPP Agency</h1>
+    <p>Ayudo a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
   </header>
 
-  <section id="servicios" class="services" aria-label="Servicios principales">
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a generar contenido que transmite, emociona y conecta. Ya sea para redes sociales, blogs o plataformas audiovisuales, creo piezas que reflejan el mensaje y la esencia de cada marca.</p>
+  </section>
+
+  <section id="servicios" class="services">
     <h2>Servicios</h2>
     <ul>
-      <li>
-        <i class="fas fa-pen-nib"></i>
-        <strong>Redacción de contenido</strong>
-        Escritura profesional para blogs, sitios web y más.
-      </li>
-      <li>
-        <i class="fas fa-video"></i>
-        <strong>Guiones para videos</strong>
-        Creación de guiones efectivos para videos promocionales.
-      </li>
-      <li class="highlighted">
-        <i class="fas fa-bullhorn"></i>
-        <strong>Contenido para redes sociales</strong>
-        Estrategias y textos que aumentan el engagement.
-      </li>
-      <li>
-        <i class="fas fa-lightbulb"></i>
-        <strong>Consultoría creativa</strong>
-        Ideas y planificación para campañas de contenido.
-      </li>
+      <li><i class="fa-solid fa-pen-nib"></i><strong>Redacción de artículos:</strong><br> Textos bien estructurados y optimizados para blogs o páginas web.</li>
+      <li><i class="fa-brands fa-youtube"></i><strong>Guiones para YouTube/TikTok:</strong><br> Ideas claras, creativas y listas para grabar con impacto.</li>
+      <li class="highlighted"><i class="fa-brands fa-twitter"></i><strong>Contenido para redes sociales:</strong><br> Textos simples, atractivos y directos para conectar con tu público en Instagram, Facebook, X (Twitter) y más.</li>
+      <li><i class="fa-solid fa-lightbulb"></i><strong>Estrategia de contenido:</strong><br> Planificación profesional para que sepas qué publicar y cuándo.</li>
+      <li><i class="fa-solid fa-check-double"></i><strong>Revisión y mejora de textos:</strong><br> Corregimos errores y mejoramos tu mensaje para hacerlo claro y profesional.</li>
     </ul>
   </section>
 
-  <section id="contacto" aria-label="Formulario de contacto">
+  <section id="contacto">
     <h2>Contacto</h2>
-    <form class="contact-form" action="#" method="POST" aria-describedby="form-info">
-      <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
-      <input type="email" name="email" placeholder="Email" aria-label="Correo electrónico" required />
-      <textarea name="mensaje" rows="5" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+    <form class="contact-form" action="https://formspree.io/f/xpwrvnbr" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="_replyto" placeholder="Tu email" required />
+      <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
-      <div id="form-info" style="display:none;">Formulario de contacto para RPP Agency</div>
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2024 RPP Agency. Todos los derechos reservados.</p>
-    <div class="social-icons" role="list">
-      <a href="https://www.facebook.com/rppagency" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/rppagency" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/rppagency" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    </div>
-  </footer>
-
-  <a
-    href="https://wa.me/1234567890"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
+  <a 
+    href="https://wa.me/681044146?text=Hola%20soy%20Gabriel%2C%20encantado%20de%20conocerte.%C2%BFEn%20qu%C3%A9%20puedo%20ayudarte%3F" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Contacto por WhatsApp" 
     class="whatsapp-button"
   >
-    <i class="fab fa-whatsapp"></i>
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
+
+  <footer>
+    <p>© 2025 RPP Agency. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
-
 
