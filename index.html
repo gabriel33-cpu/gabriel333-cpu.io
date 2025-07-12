@@ -5,17 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Estudio - Creación de Contenido</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #004d40; /* verde oscuro */
-      --accent-color: #00bfa5; /* verde aqua */
-      --bg-light: #e0f2f1; /* fondo muy claro aqua */
-      --bg-white: #ffffff;
-      --text-color: #004d40;
-      --font-main: 'Inter', sans-serif;
-      --transition-speed: 0.3s;
+      --color-bg: #faf9f7;            /* Fondo blanco roto */
+      --color-primary: #1a1a1a;       /* Negro profundo */
+      --color-secondary: #b8860b;     /* Dorado cálido */
+      --color-text: #2c2c2c;          /* Gris oscuro */
+      --color-accent: #c77f00;        /* Cobre intenso */
+      --color-white: #ffffff;
+      --transition-speed: 0.4s;
+      --font-main: 'Montserrat', sans-serif;
+      --border-radius: 10px;
+      --shadow-light: rgba(0, 0, 0, 0.05);
+      --shadow-dark: rgba(0, 0, 0, 0.15);
     }
 
     * {
@@ -26,8 +30,9 @@
 
     body {
       font-family: var(--font-main);
-      background: var(--bg-light);
-      color: var(--text-color);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
@@ -35,150 +40,190 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: var(--primary-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      background-color: var(--color-white);
+      box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
+      transition: background-color var(--transition-speed);
     }
 
     nav .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0.75rem 1rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     nav .logo {
-      color: white;
       font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
+      font-size: 1.8rem;
+      color: var(--color-primary);
       cursor: pointer;
+      letter-spacing: 2px;
+      user-select: none;
       transition: color var(--transition-speed);
     }
 
-    nav .logo:hover {
-      color: var(--accent-color);
+    nav .logo:hover,
+    nav .logo:focus {
+      color: var(--color-secondary);
+      outline: none;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     nav ul li a {
-      color: white;
-      text-decoration: none;
+      color: var(--color-primary);
       font-weight: 600;
+      text-decoration: none;
       font-size: 1rem;
+      position: relative;
+      padding-bottom: 3px;
       transition: color var(--transition-speed);
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-secondary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
+      width: 100%;
     }
 
     nav ul li a:hover,
     nav ul li a:focus {
-      color: var(--accent-color);
+      color: var(--color-secondary);
+      outline: none;
     }
 
     header {
-      background: var(--primary-color);
-      color: white;
-      padding: 6rem 1rem 4rem;
+      background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
+      color: var(--color-white);
+      padding: 7rem 1.5rem 4rem;
       text-align: center;
+      box-shadow: 0 4px 20px var(--shadow-dark);
     }
 
     header h1 {
-      font-size: 3rem;
-      animation: fadeInDown 1s ease;
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
+      animation: fadeInDown 1.2s ease forwards;
+      opacity: 0;
     }
 
     header p {
-      font-size: 1.25rem;
-      margin-top: 0.75rem;
+      font-size: 1.4rem;
       font-style: italic;
-      animation: fadeInUp 1s ease;
+      max-width: 700px;
+      margin: 0 auto;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+      color: #d6c58a;
+      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
 
     @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-40px);}
       to {opacity: 1; transform: translateY(0);}
+      from {opacity: 0; transform: translateY(-30px);}
     }
 
     @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(40px);}
       to {opacity: 1; transform: translateY(0);}
+      from {opacity: 0; transform: translateY(30px);}
     }
 
     section {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem 1.5rem;
-      background: var(--bg-white);
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      margin: 3rem auto;
+      padding: 2rem 2rem 3rem;
+      background-color: var(--color-white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 40px var(--shadow-light);
+      transition: box-shadow var(--transition-speed);
+    }
+
+    section:hover {
+      box-shadow: 0 14px 50px var(--shadow-dark);
     }
 
     h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 1.8rem;
+      font-weight: 700;
       position: relative;
-      padding-bottom: 0.5rem;
+      padding-bottom: 8px;
     }
 
     h2::after {
-      content: "";
-      width: 60px;
-      height: 4px;
-      background: var(--accent-color);
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
+      height: 3px;
+      width: 70px;
+      background-color: var(--color-secondary);
       border-radius: 2px;
     }
 
     .services ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
       list-style: none;
-      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
 
     .services li {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.75rem 1.5rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid var(--accent-color);
+      background-color: #fcfbf8;
+      border-radius: var(--border-radius);
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 18px var(--shadow-light);
+      border-left: 6px solid var(--color-secondary);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      color: var(--color-primary);
+      font-weight: 500;
     }
 
     .services li:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px var(--shadow-dark);
     }
 
     .services li i {
-      color: var(--accent-color);
-      font-size: 1.8rem;
+      color: var(--color-secondary);
+      font-size: 2rem;
     }
 
     .services li strong {
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--primary-color);
+      font-size: 1.2rem;
+      color: var(--color-primary);
     }
 
     .services li.highlighted {
-      background: linear-gradient(135deg, #e0f7f4, #b2dfdb);
-      border-left-color: #00796b;
-      color: var(--primary-color);
-      box-shadow: 0 6px 20px rgba(0, 121, 107, 0.15);
+      background: linear-gradient(135deg, #f9f7ef, #f2e9bf);
+      border-left-color: var(--color-accent);
+      box-shadow: 0 6px 20px rgba(199, 127, 0, 0.25);
     }
 
     .contact-form {
@@ -186,94 +231,106 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
     .contact-form input,
     .contact-form textarea {
       padding: 1rem 1.2rem;
       border: 2px solid #ccc;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       font-size: 1rem;
-      transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
       font-family: var(--font-main);
       resize: vertical;
+      transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+      background-color: #fff;
+      color: var(--color-primary);
+      box-shadow: inset 0 0 6px #f0f0f0;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border-color: var(--accent-color);
-      box-shadow: 0 0 8px var(--accent-color);
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
       outline: none;
     }
 
     .contact-form button {
-      background: var(--accent-color);
-      color: white;
-      padding: 1.2rem;
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
       border: none;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       cursor: pointer;
-      transition: background var(--transition-speed), transform var(--transition-speed);
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
     }
 
-    .contact-form button:hover {
-      background: #008e7e;
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background-color: #a37506;
       transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 8px 20px rgba(163, 117, 6, 0.75);
     }
 
     footer {
-      background: var(--primary-color);
-      color: #eee;
+      background-color: var(--color-primary);
+      color: var(--color-white);
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-      border-top: 2px solid var(--accent-color);
+      font-size: 0.95rem;
+      margin-top: 4rem;
+      border-top: 3px solid var(--color-secondary);
+      box-shadow: 0 -2px 12px var(--shadow-dark);
     }
 
     footer .social-icons {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
+      gap: 1.5rem;
     }
 
     footer .social-icons a {
-      color: #eee;
-      font-size: 1.3rem;
+      color: var(--color-white);
+      font-size: 1.5rem;
       transition: color var(--transition-speed);
     }
 
-    footer .social-icons a:hover {
-      color: var(--accent-color);
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
+      color: var(--color-secondary);
+      outline: none;
     }
 
     /* Botón WhatsApp fijo en esquina */
     .whatsapp-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--color-secondary);
+      color: var(--color-white);
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2.5rem;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+      font-size: 2.8rem;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
       z-index: 1100;
       transition: background-color 0.3s ease;
       cursor: pointer;
       text-decoration: none;
     }
 
-    .whatsapp-button:hover {
-      background-color: #1ebe57;
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
+      background-color: var(--color-accent);
+      outline: none;
     }
 
     @media (max-width: 768px) {
@@ -282,10 +339,17 @@
         gap: 0.5rem;
       }
       header h1 {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
       }
       .services ul {
         grid-template-columns: 1fr;
+      }
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem 2.5rem;
+      }
+      .contact-form {
+        margin: 0 1rem;
       }
     }
   </style>
@@ -327,30 +391,3 @@
   <section id="contacto">
     <h2>Contacto</h2>
     <form class="contact-form" action="https://formspree.io/f/xpwrvnbr" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <textarea name="mensaje" rows="5" placeholder="¿Cómo puedo ayudarte?" required></textarea>
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://rfrf335.github.io/rpp-estduio/gracias.html" />
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
-
-  <!-- Botón WhatsApp -->
-  <a href="https://wa.me/34681044146?text=Hola%20soy%20Gabriel%2C%20encantado%20de%20conocerte.%20%C2%BFEn%20qu%C3%A9%20puedo%20ayudarte%3F" 
-     class="whatsapp-button" 
-     target="_blank" 
-     aria-label="Enviar mensaje por WhatsApp" 
-     rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <footer>
-    &copy; 2025 RPP Estudio | Creado por Gabriel Federico Romero Pérez
-    <div class="social-icons">
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
-
-</body>
-</html>
