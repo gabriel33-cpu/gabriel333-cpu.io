@@ -9,11 +9,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #1a1a1a;
-      --accent-color: #ff4d4f;
-      --bg-light: #f5f5f5;
+      --primary-color: #004d40; /* verde oscuro */
+      --accent-color: #00bfa5; /* verde aqua */
+      --bg-light: #e0f2f1; /* fondo muy claro aqua */
       --bg-white: #ffffff;
-      --text-color: #333;
+      --text-color: #004d40;
       --font-main: 'Inter', sans-serif;
       --transition-speed: 0.3s;
     }
@@ -175,10 +175,10 @@
     }
 
     .services li.highlighted {
-      background: linear-gradient(135deg, #fef2f2, #fdf0f0);
-      border-left-color: #e63946;
+      background: linear-gradient(135deg, #e0f7f4, #b2dfdb);
+      border-left-color: #00796b;
       color: var(--primary-color);
-      box-shadow: 0 6px 20px rgba(230, 57, 70, 0.12);
+      box-shadow: 0 6px 20px rgba(0, 121, 107, 0.15);
     }
 
     .contact-form {
@@ -220,7 +220,7 @@
     }
 
     .contact-form button:hover {
-      background: #e63c3e;
+      background: #008e7e;
       transform: scale(1.05);
     }
 
@@ -251,23 +251,29 @@
       color: var(--accent-color);
     }
 
+    /* Botón WhatsApp fijo en esquina */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25D366;
       color: white;
-      font-size: 24px;
-      padding: 14px 16px;
       border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      transition: transform 0.3s ease;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+      z-index: 1100;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .whatsapp-button:hover {
-      transform: scale(1.1);
-      background-color: #1ebe5d;
+      background-color: #1ebe57;
     }
 
     @media (max-width: 768px) {
@@ -330,6 +336,15 @@
     </form>
   </section>
 
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/34681044146?text=Hola%20soy%20Gabriel%2C%20encantado%20de%20conocerte.%20%C2%BFEn%20qu%C3%A9%20puedo%20ayudarte%3F" 
+     class="whatsapp-button" 
+     target="_blank" 
+     aria-label="Enviar mensaje por WhatsApp" 
+     rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <footer>
     &copy; 2025 RPP Estudio | Creado por Gabriel Federico Romero Pérez
     <div class="social-icons">
@@ -337,14 +352,5 @@
     </div>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/34681044146?text=Hola%20Gabriel%2C%20quiero%20más%20info%20sobre%20tu%20contenido"
-     class="whatsapp-button"
-     target="_blank"
-     aria-label="Enviar mensaje por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
 </body>
 </html>
-
